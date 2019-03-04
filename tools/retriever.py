@@ -141,6 +141,7 @@ class Question:
         title = self._title()
         source_limit = self._source_limit()
         question_text = self._question_text()
+        limitation = self._limitation()
         input_text = self._input()
         output_text = self._output()
         cases = self._cases()
@@ -149,7 +150,7 @@ class Question:
 
         text = f"## {title}\n"
         text += source_limit + "\n\n"
-        text += question_text + input_text + output_text
+        text += question_text + limitation + input_text + output_text
         text += cases
         with open(path / "README.md", "a") as f:
             f.write(text)
