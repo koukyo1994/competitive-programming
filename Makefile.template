@@ -11,12 +11,16 @@ C := build/c.out
 D := build/d.out
 
 prob-a: ${A}
+	./jobs.sh ${A} a
 
 prob-b: ${B}
+	./jobs.sh ${B} b
 
 prob-c: ${C}
+	./jobs.sh ${C} c
 
 prob-d: ${D}
+	./jobs.sh ${D} d
 
 ${A}: ${ACPP}
 	${CXX} ${CFLAGS} ${ACPP} -o ${A}
