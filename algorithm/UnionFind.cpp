@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-#include <algorithm>
 
 using namespace std;
 
@@ -11,13 +10,13 @@ struct UnionFind
     // 根ノードiに含まれるノードの数
     vector<int> sizes;
 
-    // 最初は全てが根、サイズは1
+    // 最初は全てが根、サイズは0
     UnionFind(int N) : par(N)
     {
         for (int i = 0; i < N; i++)
         {
             par[i] = i;
-            sizes[i] = 1;
+            sizes[i] = 0;
         }
     }
 
@@ -51,9 +50,23 @@ struct UnionFind
             return;
 
         if (size(x) < size(y))
-            swap(x, y);
-        par[y] = x;
-        sizes[x] += sizes[y];
-        sizes[y] = 0;
+        {
+            par[x] = y;
+            sizes[y] += sizes[x];
+            sizes[x] = 0;
+        }
+        else
+        {
+            par[y] = x;
+            if (sizes[x] == sizes[y])
+            {
+                sizes[x]++;
+            }
+            else
+            {
+                sizes[x] += sizes[y];
+            }
+            sizes[x] = 0;
+        }
     }
 };
