@@ -71,9 +71,9 @@ int main()
 
     int N, M;
     cin >> N >> M;
-    vector<int> A(M);
-    vector<int> B(M);
-    vector<unsigned int> result(M);
+    vector<unsigned int> A(M);
+    vector<unsigned int> B(M);
+    vector<long long int> result(M);
     for (int i = 0; i < M; i++)
     {
         cin >> A[i] >> B[i];
@@ -82,11 +82,11 @@ int main()
     }
 
     UnionFind UF(N);
-    result[M - 1] = N * (N - 1) / 2;
+    result[M - 1] = (long long)N * (N - 1) / 2;
     for (int i = M - 1; i > 0; i--)
     {
-        int size_a;
-        int size_b;
+        long long int size_a;
+        long long int size_b;
         if (!UF.same(A[i], B[i]))
         {
             size_a = UF.size(A[i]) + 1;
