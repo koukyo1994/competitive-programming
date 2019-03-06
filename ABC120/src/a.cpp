@@ -9,11 +9,11 @@ int main()
     cin >> A >> B >> C;
     if (B / A > C)
     {
-        cout << C;
+        cout << C << endl;
     }
     else
     {
-        cout << (B / A);
+        cout << (B / A) << endl;
     }
 
     return 0;

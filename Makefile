@@ -10,3 +10,6 @@ env:
 retrieve:
 	./dirmake.sh `echo ${CONTEST} | tr a-z A-Z`
 	python tools/retriever.py ${CONTEST}
+
+debug:
+	docker run -v `pwd`:/app -i -t --cap-add=SYS_PTRACE --security-opt="seccomp=unconfined" ${IMAGE} /bin/bash

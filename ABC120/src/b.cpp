@@ -28,6 +28,6 @@ int main()
         }
         d--;
     }
-    cout << (d + 1);
+    cout << (d + 1) << endl;
     return 0;
 }

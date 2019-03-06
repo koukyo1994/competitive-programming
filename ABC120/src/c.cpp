@@ -25,11 +25,11 @@ int main()
     }
     if (red > blue)
     {
-        cout << (2 * blue);
+        cout << (2 * blue) << endl;
     }
     else
     {
-        cout << (2 * red);
+        cout << (2 * red) << endl;
     }
     return 0;
 }

@@ -4,7 +4,7 @@ RUN apt-get update &&\
 
 RUN add-apt-repository universe &&\
     apt-get update &&\
-    apt-get install -yq g++ libboost-all-dev cmake make &&\
+    apt-get install -yq g++ libboost-all-dev cmake make gdb &&\
     apt-get clean &&\
     rm -rf /var/lib/apt/lists/*
 RUN mkdir /app
