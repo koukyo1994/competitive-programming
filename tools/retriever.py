@@ -126,6 +126,8 @@ class Question:
         text = ""
         for i in range(4, 10):
             tag = self.part[i]
+            if not ("入力例" in tag.text or "出力例" in tag.text):
+                break
             cases = get_cases(tag)
             if "入力例" in cases[0]:
                 self.test_cases.append(cases[1])
