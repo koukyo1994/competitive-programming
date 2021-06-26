@@ -3,7 +3,7 @@ A = sorted(list(map(int, input().split())))
 
 
 def binary_search(B: int, A: list):
-    ub = len(A)
+    ub = len(A) - 1
     lb = 0
     while ub - lb > 1:
         mid = int((lb + ub) // 2)
@@ -17,10 +17,10 @@ def binary_search(B: int, A: list):
 def get_distance(B: int, lb: int, A: list):
     if lb == len(A) - 1:
         return abs(B - A[lb])
-    elif lb == 0:
-        return abs(B - A[lb])
+    elif lb == len(A):
+        return abs(B - A[lb - 1])
     else:
-        return abs(min(B - A[lb], A[lb + 1] - B))
+        return min(abs(B - A[lb]), abs(A[lb + 1] - B))
 
 
 Q = int(input())
